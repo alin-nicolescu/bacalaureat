@@ -22,11 +22,11 @@
       color:var(--text); background:var(--surface); box-shadow:var(--shadow); white-space:nowrap; font:inherit; }
     .years { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:22px; }
     .year-card { position:relative; isolation:isolate; overflow:hidden; min-height:330px; display:flex; align-items:flex-end;
-      border:1px solid var(--line); border-radius:28px; background-image:var(--photo); background-size:cover;
-      background-position:center; box-shadow:var(--shadow); transition:transform .2s ease,box-shadow .2s ease; }
+      border:2px solid #000; border-radius:28px; background-image:var(--photo); background-size:cover;
+      background-position:center; box-shadow:var(--shadow); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
     .year-card::before { content:""; position:absolute; z-index:-1; inset:0;
       background:linear-gradient(180deg,rgba(9,15,30,.08) 10%,rgba(9,15,30,.88) 94%); }
-    .year-card:hover { transform:translateY(-4px); box-shadow:0 25px 60px rgba(51,37,91,.28); }
+    .year-card:hover { border-color:red; transform:translateY(-4px); box-shadow:0 25px 60px rgba(51,37,91,.28); }
     .card-content { width:100%; padding:clamp(22px,4vw,30px); color:#fff; }
     .eyebrow { margin:0; font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; opacity:.82; }
     h2 { margin:2px 0 18px; font-size:clamp(3.2rem,8vw,5.2rem); line-height:1; letter-spacing:-.06em; }
@@ -51,12 +51,12 @@
     <button class="theme" id="theme" type="button" aria-label="Comută tema">🌙 Mod întunecat</button></header>
   <section class="years" aria-label="Rapoarte pe ani"><article class="year-card" style="--photo:url('img/students.png')">
               <div class="card-content"><p class="eyebrow">Rezultate Bacalaureat</p>
-              <h2>2026</h2><nav aria-label="Sesiunile din 2026"><a href="2026_s_1.html">Sesiunea 1</a><a href="2026_s_2.html">Sesiunea 2</a></nav></div></article><article class="year-card" style="--photo:url('img/graduates.png')">
+              <h2>2026</h2><nav aria-label="Sesiunile din 2026"><a href="2026_s_1.html">Sesiunea 1</a><a href="2026_s_1_anterior.html">Sesiunea 1 anterior</a><a href="2026_s_2.html">Sesiunea 2</a></nav></div></article><article class="year-card" style="--photo:url('img/graduates.png')">
               <div class="card-content"><p class="eyebrow">Rezultate Bacalaureat</p>
               <h2>2025</h2><nav aria-label="Sesiunile din 2025"><a href="2025_s_1.html">Sesiunea 1</a><a href="2025_s_2.html">Sesiunea 2</a></nav></div></article></section>
   <footer><a href="https://bacalaureat.xyz/">bacalaureat.xyz</a>
     <p class="license-notice">Raport și prezentare © 2026 bacalaureat.xyz, licențiate sub <a href="https://creativecommons.org/licenses/by/4.0/legalcode.ro">CC BY 4.0</a>.<br>Date sursă: Ministerul Educației, <a href="https://bacalaureat.edu.ro/">bacalaureat.edu.ro</a>. Datele sursă rămân supuse condițiilor stabilite de furnizor.</p>
-    <p>Versiunea: 02.09.2026 16:52</p></footer>
+    <p>Versiunea: 04.09.2026 17:34</p></footer>
 </main><script>
 const root=document.documentElement,theme=document.getElementById("theme");
 function setTheme(dark){root.dataset.theme=dark?"dark":"light";theme.textContent=dark?"☀️ Mod luminos":"🌙 Mod întunecat";}
