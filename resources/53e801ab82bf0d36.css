@@ -1,0 +1,43 @@
+h1{font-size:clamp(1.5rem,4vw,2.7rem);line-height:1.15}
+      .report-kind{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:600;margin:12px 0 0}
+      .subject{background:var(--surface);padding:22px;border-radius:20px;margin:20px 0}
+      .exam-section{margin-top:36px;scroll-margin-top:24px}.exam-section h2{font-size:1.5rem;margin:0 0 16px}
+      .subject h3{margin-top:0}.subject-nav{display:flex;flex-wrap:wrap;line-height:1.4}.subject-nav a{font-size:.9rem;min-height:0;padding:6px 10px}a{color:var(--accent)}
+      .exam-nav{margin:18px 0}.exam-nav a{min-height:44px;padding:10px 16px}
+      .school-menu{margin:24px 0;border:1px solid var(--line);border-radius:20px;
+        background:var(--surface);box-shadow:0 8px 24px rgba(51,37,91,.1);overflow:hidden}
+      .school-menu summary{display:flex;align-items:center;gap:18px;padding:22px 24px;cursor:pointer;
+        list-style:none;background:linear-gradient(120deg,rgba(109,40,217,.1),rgba(2,132,199,.08))}
+      .school-menu summary::-webkit-details-marker{display:none}
+      .school-menu-heading{flex:1;font-size:1.2rem;font-weight:750;line-height:1.35}
+      .school-menu-heading small{display:block;margin-top:6px;color:var(--muted);font-size:.9rem;font-weight:400}
+      .school-menu-count{padding:5px 12px;border-radius:999px;background:var(--surface);
+        color:var(--accent);font-size:.85rem;font-weight:700;white-space:nowrap}
+      .school-menu summary::after{content:"";width:10px;height:10px;flex:none;border-right:2px solid var(--accent);
+        border-bottom:2px solid var(--accent);transform:rotate(45deg);margin:0 3px 5px}
+      .school-menu[open] summary::after{transform:rotate(225deg);margin-top:8px}
+      .school-menu summary:hover{background:rgba(109,40,217,.12)}
+      .school-menu summary:focus-visible,.school-menu a:focus-visible,.school-menu button:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+      .school-menu ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+        list-style:none;margin:0;padding:18px;max-height:460px;overflow:auto;border-top:1px solid var(--line)}
+      .school-menu li{min-width:0}
+      .school-menu a,.school-menu button,.school-unavailable{position:relative;display:block;padding:16px 42px 16px 18px;
+        min-height:80px;border:1px solid var(--line);border-radius:12px;background:var(--surface);
+        color:var(--text);text-decoration:none;overflow-wrap:anywhere}
+      .school-menu strong{display:block;font-size:.98rem;line-height:1.4}
+      .school-menu li span{display:block;margin-top:5px;font-size:.85rem;color:var(--muted)}
+      .school-menu a::after{content:"→";position:absolute;right:16px;top:18px;color:var(--accent);font-size:1.2rem}
+      .school-menu a:hover,.school-menu button:hover,.school-menu button[aria-pressed="true"]{border-color:var(--accent);background:rgba(109,40,217,.08)}
+      .school-menu button{width:100%;text-align:left;cursor:pointer;font:inherit}
+      .school-menu button[aria-pressed="true"]::after{content:"✓";position:absolute;right:16px;top:18px;color:var(--accent)}
+      .school-unavailable{opacity:.65}
+      @media(max-width:600px){.school-menu summary{padding:18px 16px;gap:10px}
+        .school-menu-heading{font-size:1.05rem}.school-menu-count{padding:4px 8px;font-size:.75rem}
+        .school-menu ul{grid-template-columns:1fr;padding:12px}}
+      .table-scroll{overflow:auto}table{width:100%;border-collapse:collapse}
+      th,td{text-align:left;padding:7px;border-bottom:1px solid var(--muted)}
+      meter{width:100%;min-width:70px}select{padding:10px;font:inherit;max-width:100%}
+      .subject-diagram-filter{display:flex;align-items:center;gap:12px;margin:24px 0}
+      .subject-chart{margin-top:20px}
+      .charts-ready .subject th:last-child,.charts-ready .subject td:last-child{display:none}
+      [hidden]{display:none!important}

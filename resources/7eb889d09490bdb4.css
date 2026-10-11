@@ -1,0 +1,48 @@
+:root { color-scheme:light; --bg1:#dbeafe; --bg2:#f5d0fe; --bg3:#fef3c7;
+      --surface:rgba(255,255,255,.78); --text:#172033; --muted:#5b6475; --line:rgba(255,255,255,.72);
+      --accent:#6d28d9; --accent2:#0284c7; --shadow:0 18px 50px rgba(51,37,91,.18); }
+    :root[data-theme="dark"] { color-scheme:dark; --bg1:#0f172a; --bg2:#2e1065; --bg3:#172554;
+      --surface:rgba(15,23,42,.8); --text:#f8fafc; --muted:#bac4d5; --line:rgba(255,255,255,.14);
+      --accent:#c4b5fd; --accent2:#7dd3fc; --shadow:0 20px 55px rgba(0,0,0,.38); }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; color:var(--text); font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2) 52%,var(--bg3)); background-attachment:fixed; }
+    .page { width:min(1180px,calc(100% - 40px)); margin:auto; padding:clamp(30px,6vw,64px) 0 60px; }
+    header { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:30px; }
+    h1 { margin:0; font-size:clamp(2rem,5vw,3.7rem); line-height:1; letter-spacing:-.055em; }
+    .subtitle { color:var(--muted); margin:.75rem 0 0; }
+    .theme { border:1px solid var(--line); border-radius:999px; padding:10px 15px; cursor:pointer;
+      color:var(--text); background:var(--surface); box-shadow:var(--shadow); white-space:nowrap; font:inherit; }
+    .years { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:22px; }
+    .report-section { margin-top:32px; }
+    .report-section > h2 { font-size:1.5rem; margin:0 0 18px; }
+    .year-card { position:relative; isolation:isolate; overflow:hidden; min-height:330px; display:flex; align-items:flex-end;
+      border:2px solid #000; border-radius:28px; background-size:cover;
+      background-position:center; box-shadow:var(--shadow); transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease; }
+    .year-card::before { content:""; position:absolute; z-index:-1; inset:0;
+      background:linear-gradient(180deg,rgba(9,15,30,.08) 10%,rgba(9,15,30,.88) 94%); }
+    .year-card:hover { border-color:red; transform:translateY(-4px); box-shadow:0 25px 60px rgba(51,37,91,.28); }
+    .card-content { width:100%; padding:clamp(22px,4vw,30px); color:#fff; }
+    .eyebrow { margin:0; font-size:.78rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; opacity:.82; }
+    .year-card h3 { margin:2px 0 18px; font-size:clamp(3.2rem,8vw,5.2rem); line-height:1; letter-spacing:-.06em; }
+    nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    nav a { min-height:46px; display:inline-flex; align-items:center; justify-content:center; padding:10px 17px;
+      border:1px solid rgba(255,255,255,.55); border-radius:999px; color:#172033; background:rgba(255,255,255,.9);
+      font-weight:800; text-decoration:none; backdrop-filter:blur(10px); }
+    nav a.multiline { flex-direction:column; line-height:1.25; }
+    nav a:hover,nav a:focus-visible { background:#fff; outline:3px solid rgba(196,181,253,.7); outline-offset:2px; }
+    .subject-year-card { min-height:430px; }
+    .subject-county-label { display:block; margin-bottom:5px; font-weight:700; }
+    .subject-county-select { width:100%; margin:0 0 12px; padding:9px 12px; border-radius:12px;
+      border:1px solid rgba(255,255,255,.6); color:#172033; background:#fff; font:inherit; }
+    .subject-year-card [hidden] { display:none!important; }
+    .subject-year-card noscript a { color:#fff; }
+    .empty { padding:45px; border:1px dashed var(--line); border-radius:24px; color:var(--muted); background:var(--surface); }
+    footer { margin-top:38px; padding-top:22px; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:.9rem; }
+    footer a { color:var(--accent); font-weight:800; text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
+    footer p { margin:5px 0 0; }
+    .license-notice { max-width:760px; margin:10px auto 0; }
+    @media (max-width:600px) { .page{width:calc(100% - 20px);padding-top:28px} header{display:block}.theme{margin-top:18px}
+      .years{gap:14px}.year-card{min-height:280px;border-radius:22px} nav{display:grid;grid-template-columns:1fr 1fr} nav a{padding-inline:10px} }
+    @media (prefers-reduced-motion:reduce) { .year-card{transition:none} }
