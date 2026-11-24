@@ -1,4 +1,4 @@
-const distributionColors=["#2563eb","#06b6d4","#10b981","#f59e0b","#f43f5e","#7c3aed","#be185d","#854d0e","#64748b","#84cc16"];
+const distributionColors=["Blue","Orange","Green","Red","Gold","Purple","Cyan","Teal","Gray","Navy"];
 const distributionObserver=typeof IntersectionObserver==="undefined"?null:new IntersectionObserver(entries=>{
   entries.forEach(({target,isIntersecting})=>{if(isIntersecting){distributionObserver.unobserve(target);target.drawDistribution();}});
 },{rootMargin:"250px"});
