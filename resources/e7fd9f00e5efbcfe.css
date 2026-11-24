@@ -11,6 +11,7 @@
     header { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:30px; }
     h1 { margin:0; font-size:clamp(2rem,5vw,3.7rem); line-height:1; letter-spacing:-.055em; }
     .subtitle { color:var(--muted); margin:.75rem 0 0; }
+    .text-only-break,.text-separator { display:none; }
     .theme { border:1px solid var(--line); border-radius:999px; padding:10px 15px; cursor:pointer;
       color:var(--text); background:var(--surface); box-shadow:var(--shadow); white-space:nowrap; font:inherit; }
     .years { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr)); gap:22px; }

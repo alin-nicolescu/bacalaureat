@@ -14,9 +14,10 @@ const choice=document.getElementById('specialization');
       }
       const chartMode=document.getElementById('chart-mode');
       if(chartMode){
-        const colors=['#64748b','#8b5cf6','#a855f7','#ec4899','#ef4444','#2563eb','#06b6d4','#10b981','#f59e0b','#f43f5e'];
         const subjectCharts=Array.from(document.querySelectorAll('.subject')).map(subject=>{
           const rows=Array.from(subject.querySelectorAll('tbody tr'));
+          const colors=rows.length===3?[distributionColors[0],distributionColors[2],distributionColors[3]]:
+            rows.length===4?[distributionColors[0],distributionColors[2],distributionColors[3],distributionColors[4]]:distributionColors;
           const counts=rows.map(row=>Number(row.querySelector('td').textContent));
           const total=counts.reduce((sum,count)=>sum+count,0);
           const values=rows.map((row,index)=>({label:row.querySelector('th').textContent,
@@ -24,8 +25,10 @@ const choice=document.getElementById('specialization');
           const chart=document.createElement('div');chart.className='subject-chart';
           subject.append(chart);return {chart,values};
         });
-        function renderSubjectCharts(){subjectCharts.forEach(({chart,values})=>
-          chart.replaceChildren(distributionChart(values,chartMode.value)));}
+        function renderSubjectCharts(){subjectCharts.forEach(({chart,values})=>{
+          const mode=chartMode.value;
+          scheduleDistribution(chart,()=>chart.replaceChildren(distributionChart(values,mode)));
+        });}
         chartMode.addEventListener('change',renderSubjectCharts);
         renderSubjectCharts();
         chartMode.closest('label').hidden=false;

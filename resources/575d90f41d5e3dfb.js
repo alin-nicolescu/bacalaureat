@@ -1,3 +1,11 @@
+const distributionColors=["#2563eb","#06b6d4","#10b981","#f59e0b","#f43f5e"];
+const distributionObserver=typeof IntersectionObserver==="undefined"?null:new IntersectionObserver(entries=>{
+  entries.forEach(({target,isIntersecting})=>{if(isIntersecting){distributionObserver.unobserve(target);target.drawDistribution();}});
+},{rootMargin:"250px"});
+function scheduleDistribution(chart,draw){
+  chart.drawDistribution=draw;
+  if(distributionObserver){distributionObserver.unobserve(chart);distributionObserver.observe(chart);}else draw();
+}
 function distributionChart(values,mode){
   const chart=document.createElement("div");
   const format=value=>Number(value).toLocaleString("ro-RO",{minimumFractionDigits:2,maximumFractionDigits:2});
